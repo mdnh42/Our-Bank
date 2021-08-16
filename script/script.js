@@ -1,20 +1,18 @@
-
-//Button Connect 
-document.getElementById('login-submit').addEventListener('click', function(){
-// Get User Email
-const emailField = document.getElementById('user-email');
-const userEmail = emailField.value;
-// Get User Password
-const passField = document.getElementById('user-password');
-const userPass = passField.value;
-
-// COndition User ID & Pass
-    if(userEmail == 'admin' && userPass == '123'){
-        window.location.href = 'banking.html';
+ //Create add event listner 
+ document.getElementById('login-submit').addEventListener('click', function(){
+    // call email input
+    const emailFied = document.getElementById('user-email').value;
+    
+    // call pass input
+    const passFied = document.getElementById('user-password').value;
+    
+    if(emailFied == 'admin' && passFied == '123'){
+        window.location.href='banking.html';
     }
     else{
-        alert('Wrong User & Pass Please type UserID: admin & pass: 123');
+        alert('You ID & Pass Wrong. Please type: admin & 123');
     }
+    
 })
 
-//End Button Syle
+
