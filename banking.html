@@ -52,57 +52,7 @@
             </div>
         </section>
     </main>
-    <script>
-       document.getElementById('deposit-btn').addEventListener('click', function(){
-
-            const depositInput = document.getElementById('deposit-input');
-            const depositAmount = depositInput.value;
-            const depositCurrentAmount = parseFloat(depositAmount);
-            
-            const depositTotal = document.getElementById('deposit-total');
-            const depositTotalText = depositTotal.innerText;
-            const previousDepositTotal = parseFloat(depositTotalText);
-
-            const depositcurrentTotal = depositCurrentAmount + previousDepositTotal;
-
-            depositTotal.innerText =depositcurrentTotal;
-
-            // Balance Update
-            const balanceTotal = document.getElementById('balance-total');
-            console.log(balanceTotal);
-            const balanceTotalText = balanceTotal.innerText;
-            const previousBalanceTotal = parseFloat(balanceTotalText);
-
-            balanceTotal.innerText = previousBalanceTotal + depositcurrentTotal;
-            
-
-            // cleare input 
-            depositInput.value = '';
-
-       })
-
-       document.getElementById('withdraw-btn').addEventListener('click', function(){
-           const withdrawInput = document.getElementById('withdraw-input');
-           const withdrawAmountText = withdrawInput.value;
-           const withdrawAmount = parseFloat(withdrawAmountText);
-
-        
-           
-           const withdrawTotal = document.getElementById('withdraw-total')
-        
-           const withdrawTOtalText = withdrawTotal.innerText;
-           const withdrawTotalAmount = parseFloat(withdrawTOtalText);
-           withdrawTotal.innerText= withdrawTotalAmount + withdrawAmount;
-           
-        //    update ballance after withdraw
-        const balanceTotal = document.getElementById('balance-total');
-        const balanceTotalText = balanceTotal.innerText;
-        const previousBalanceTotal= parseFloat(balanceTotalText);
-        balanceTotal.innerText = previousBalanceTotal - withdrawAmount;
-           withdrawInput.value = '';
-
-       })
-    </script>
     <script src="script/script.js"></script>
+    
 </body>
 </html>
