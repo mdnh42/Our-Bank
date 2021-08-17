@@ -94,7 +94,11 @@
            const withdrawTotalAmount = parseFloat(withdrawTOtalText);
            withdrawTotal.innerText= withdrawTotalAmount + withdrawAmount;
            
-           const 
+        //    update ballance after withdraw
+        const balanceTotal = document.getElementById('balance-total');
+        const balanceTotalText = balanceTotal.innerText;
+        const previousBalanceTotal= parseFloat(balanceTotalText);
+        balanceTotal.innerText = previousBalanceTotal - withdrawAmount;
            withdrawInput.value = '';
 
        })
