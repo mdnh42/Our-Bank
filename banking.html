@@ -53,68 +53,51 @@
         </section>
     </main>
     <script>
-       
+       document.getElementById('deposit-btn').addEventListener('click', function(){
 
-// Banking ................=========================================
-// Add Event Listner
- document.getElementById('deposit-btn').addEventListener('click', function(){
-    //Store input data
-    const depositInput = document.getElementById('deposit-input')
-    const newDepositAmount = depositInput.value;
-    
-    
-    // show input
-    const depositTotal = document.getElementById('deposit-total');
+            const depositInput = document.getElementById('deposit-input');
+            const depositAmount = depositInput.value;
+            const depositCurrentAmount = parseFloat(depositAmount);
+            
+            const depositTotal = document.getElementById('deposit-total');
+            const depositTotalText = depositTotal.innerText;
+            const previousDepositTotal = parseFloat(depositTotalText);
 
-    const previousDepositAmount = depositTotal.innerText; 
-    const newDepositTotal = parseFloat(previousDepositAmount) + parseFloat(newDepositAmount);
-    
-    depositTotal.innerText = newDepositTotal;
-    // Update Account Balaence
-    const balanceTotal = document.getElementById('balance-total');
+            const depositcurrentTotal = depositCurrentAmount + previousDepositTotal;
 
-    const balanceTotalex = balanceTotal.innerText;
-    const previousDepositTotal = parseFloat(balanceTotalex);
-    const newBalanceTotal = previousDepositTotal + parseFloat(newDepositAmount);
+            depositTotal.innerText =depositcurrentTotal;
 
-    balanceTotal.innerText = newBalanceTotal;
+            // Balance Update
+            const balanceTotal = document.getElementById('balance-total');
+            console.log(balanceTotal);
+            const balanceTotalText = balanceTotal.innerText;
+            const previousBalanceTotal = parseFloat(balanceTotalText);
 
+            balanceTotal.innerText = previousBalanceTotal + depositcurrentTotal;
+            
 
-    // clear input
-    depositInput.value = '';
+            // cleare input 
+            depositInput.value = '';
 
-})
+       })
 
+       document.getElementById('withdraw-btn').addEventListener('click', function(){
+           const withdrawInput = document.getElementById('withdraw-input');
+           const withdrawAmountText = withdrawInput.value;
+           const withdrawAmount = parseFloat(withdrawAmountText);
 
-// ===== withdraw
-    document.getElementById('withdraw-btn').addEventListener('click', function(){
-        console.log('withdraw click');
+        
+           
+           const withdrawTotal = document.getElementById('withdraw-total')
+        
+           const withdrawTOtalText = withdrawTotal.innerText;
+           const withdrawTotalAmount = parseFloat(withdrawTOtalText);
+           withdrawTotal.innerText= withdrawTotalAmount + withdrawAmount;
+           
+           const 
+           withdrawInput.value = '';
 
-        const withdrawInput = document.getElementById('withdraw-input');
-        const withdrawAmountText = withdrawInput.value;
-        const newWithdrawAmont = parseFloat(withdrawAmountText);
-        console.log(newWithdrawAmont);
-
-
-        const withdrawTotal = document.getElementById('withdraw-total');
-        const previousWithdrawText = withdrawTotal.innerText;
-        const previousWithdrawTotal = parseFloat(previousWithdrawText);
-
-        const newwithdrawTotal = previousWithdrawTotal + newWithdrawAmont;
-
-        withdrawTotal.innerText = newwithdrawTotal;
-        // update balance
-        const balanceToatal = document.getElementById('balance-total');
-        const previusBalanceText = balanceToatal.innerText;
-        const previousDepositTotal = parseFloat(previousWithdrawText);
-        const newBalanceTotal = previousDepositTotal - newWithdrawAmont;
-
-        balanceToatal.innerText = newBalanceTotal;
-
-        withdrawInput.value = '' ;
-    })
-
-
+       })
     </script>
     <script src="script/script.js"></script>
 </body>
