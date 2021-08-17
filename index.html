@@ -29,9 +29,25 @@
         <p class="text-center mt-20"> <small>Bank Application &copy; 2022 </small> </p>
     </footer>
     <script>
+       document.getElementById('login-submit').addEventListener('click', function(){        
+            const userEmail = document.getElementById('user-email').value;
+            console.log(userEmail);
+            const userPassword = document.getElementById('user-password').value;
+            console.log(userPassword);
+
+            if(userEmail == 'admin' & userPassword == '123'){
+                window.location.href = 'banking.html';
+            }
+            else{
+                alert('wrong Password! Please type admin & 123');
+            }
+
+
+            
+       })
        
 
     </script>
-    <script src="script/script.js"></script>
+    
 </body>
 </html>
